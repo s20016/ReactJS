@@ -2,6 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import './App.css'
+
+
+/* 作りながら学ぶ REACT (p. 125-130) R1 */
+/*
 const MoneyBook = () => {
   const books = [
     { date: '1/1', item: 'お年玉', amount: 10000 },
@@ -51,4 +55,52 @@ Title.propTypes = {
   children: PropTypes.string
 }
 ReactDOM.render(<MoneyBook />, document.getElementById('root'))
+export default MoneyBook
+*/
+
+
+/* 作りながら学ぶ REACT (p. 125-130) R2 */
+
+class MoneyBook extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      // books = []
+    }
+    this.URL = 'http://localhost:3000/books.json'
+  }
+
+  componentDidMount() {
+    window
+      .fetch(this.URL)
+      .then(res => res.json())
+      .then(books => this.setState(books))
+  }
+
+  render() {
+    const header = [ '日付', '項目', '入金', '出金' ]
+    return (
+      <>
+        <h1>MoneyBook</h1>
+        <table>
+          <tr>
+            <th>{header[0]}</th>
+            <th>{header[1]}</th>
+            <th>{header[2]}</th>
+            <th>{header[3]}</th>
+          </tr>
+        </table>
+      </>
+    )
+  }
+}
+
+const ListView = props => {
+
+}
+
+const EntryView = props => {
+
+}
+
 export default MoneyBook
