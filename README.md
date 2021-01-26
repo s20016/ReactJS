@@ -1,7 +1,8 @@
 ## **ReactJS**
 
 #### **Personal Projects**
-* Tutorial: Intro to React「[P1-Tictactoe](https://github.com/s20016/ReactJS/tree/tictactoe)」
+* Project01 「[P1-MoneyConverter](https://github.com/s20016/ReactJS/tree/convert-currency)」
+* Tutorial: Intro to React「[T1-Tictactoe](https://github.com/s20016/ReactJS/tree/tictactoe)」
 
 #### **Class Projects**
 * 作りながら学ぶ REACT「[C1-Moneybook](https://github.com/s20016/ReactJS/tree/moneybook)」
