@@ -1,8 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+// import ReactDOM from 'react-dom'
+// import PropTypes from 'prop-types'
 import './App.css'
-
 
 /* 作りながら学ぶ REACT (p. 125-130) R1 */
 /*
@@ -59,48 +58,110 @@ export default MoneyBook
 */
 
 
-/* 作りながら学ぶ REACT (p. 125-130) R2 */
-
 class MoneyBook extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      // books = []
+      books: []
     }
-    this.URL = 'http://localhost:3000/books.json'
+    this.URI = "http://localhost:3000/ReactJS/budget.json"
   }
 
-  componentDidMount() {
+  componentDidMount () {
     window
-      .fetch(this.URL)
+      .fetch(this.URI)
       .then(res => res.json())
-      .then(books => this.setState(books))
+      .then(books => this.setState({ books }))
   }
 
-  render() {
-    const header = [ '日付', '項目', '入金', '出金' ]
+  render () {
+    const books = this.state.books
+    // if (!books.length) return <div>Now Loading...</div>
     return (
       <>
         <h1>MoneyBook</h1>
-        <table>
-          <tr>
-            <th>{header[0]}</th>
-            <th>{header[1]}</th>
-            <th>{header[2]}</th>
-            <th>{header[3]}</th>
-          </tr>
-        </table>
+        <TableView books={books} />
+        <EntryView />
       </>
     )
   }
 }
 
-const ListView = props => {
-
+const TableView = props => {
+  const { books } = props
+  const headings = ['date', 'item', 'income', 'expenses']
+  return (
+    <table className='book'>
+      <MatrixHeader headings={headings} />
+      <MatrixBody books={books} />
+    </table>
+  )
 }
 
-const EntryView = props => {
+const MatrixHeader = props => (
+  <thead data-type='ok'>
+    <tr>
+      {props.headings.map(heading => (
+        <th key={heading}>{heading}</th>
+      ))}
+    </tr>
+  </thead>
+)
 
+const MatrixBody = props => (
+  <tbody>
+    {props.books.map(book => (
+      <BookItem book={book} key={book.date + book.item} />
+    ))}
+  </tbody>
+)
+
+const BookItem = props => {
+  const { date, item, amount } = props.book
+  const isNegative = amount => amount < 0
+  return (
+    <tr>
+      <td>{date}</td>
+      <td>{item}</td>
+      <td>{isNegative(amount) ? null : amount}</td>
+      <td>{isNegative(amount) ? Math.abs(amount) : null}</td>
+    </tr>
+  )
 }
 
+class EntryView extends React.Component {
+  render () {
+    return (
+      <div className='entry'>
+        <fieldset>
+          <legend>記帳</legend>
+          <fieldset>
+            <legend>入出金</legend>
+            <label>
+              <input type='radio' value='on' name='cash' />
+              入金
+            </label>
+            <label>
+              <input type='radio' value='off' name='cash' />
+              出金
+            </label>
+          </fieldset>
+          <label className='box'>
+            日付
+            <input type='text' />
+          </label>
+          <label className='box'>
+            項目
+            <input type='text' />
+          </label>
+          <label className='box'>
+            金額
+            <input type='text' />
+          </label>
+          <button>追加</button>
+        </fieldset>
+      </div>
+    )
+  }
+}
 export default MoneyBook
