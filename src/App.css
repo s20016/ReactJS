@@ -1,10 +1,8 @@
-div {
-  margin-left: 10px;
+body {
+  margin: 0 0 0 20px;
 }
-.book {
-  border-collapse: collapse;
-}
-.book th, .book td {
-  border: solid 1px;
-  padding: 1px 15px;
+
+input {
+  width: 250px;
+  margin: 3px;
 }
