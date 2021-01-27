@@ -1,8 +1,6 @@
-[
-  {
-    "title" : "Money Conversion",
-    "JPY" : { "USD": "0.0096", "PHP": "0.46" },
-    "USD" : { "JPY": "103.76", "PHP": "48.08" },
-    "PHP" : { "JPY": "2.16", "USD": "0.021" }
-  }
-]
+{
+  "title" : "Money Conversion",
+  "JPY" : { "USD": "0.0096", "PHP": "0.46" },
+  "USD" : { "JPY": "103.76", "PHP": "48.08" },
+  "PHP" : { "JPY": "2.16", "USD": "0.021" }
+}
