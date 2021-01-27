@@ -1,8 +1,7 @@
 body {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 22px;
 }
 
-input {
-  width: 250px;
-  margin: 3px;
+p, input {
+  margin: 2px 2px 2px 0;
 }
