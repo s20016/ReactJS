@@ -20,8 +20,10 @@ export default class CurrencyConverter extends React.Component {
   }
 
   async componentDidMount() {
-    const url = 'https://s20016.github.io/ReactJS/data/rates.json'
-    // const url = './data/rates.json'
+    // const url = 'https://s20016.github.io/ReactJS/data/rates.json'
+    // const url = 'https://raw.githubusercontent.com/s20016/ReactJS/master/public/data/rates.json'
+    // const url = 'http://localhost:3000/ReactJS/data/rates.json'
+    const url = './ReactJS/data/rates.json'
     await window.fetch(url).then(res => res.json()).then(json => this.setState({ data: json}))
     // console.log(this.state.data)
   }
