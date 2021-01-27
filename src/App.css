@@ -1,38 +1,63 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* * {
+  border: 1px solid #f00 !important;
+} */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #303540;
+}
+
+/* Heading */
+.header1, .header2 {
+  position: relative;
   text-align: center;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.header1 {
+  color: #ffffff;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 40px auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: absolute;
+  letter-spacing: 4px;
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.header2 {
+  color: #61DAFB;
+  font-size: 70px;
+  margin: 35px auto 0;
+  background-color: #282C34;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  color: #b3b5b9;
+  text-align: center;
+  font-size: 12px;
+  margin: 15px auto 0;
+  padding: 30px;
+  background-color: #282C34;
+  white-space: pre-wrap;
+}
+
+/* Main Projects */
+.container {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  margin: 20px;
+  list-style: none;
+}
+
+.container > * {
+  flex-basis: 100%;
 }
