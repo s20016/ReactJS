@@ -36,7 +36,7 @@ export default class RealTimeInput extends React.Component {
           <input type='text' maxlength='15' placeholder='Enter something...' className='P3-Input' value={this.state.userInput} onChange={this.handleInput} />
           <button type='button' onClick={this.handleSave} >Save</button>
         </div>
-        <h3>{this.state.userInput}</h3><br></br>
+        <h3 className='P3-Output'>{this.state.userInput}</h3><br></br>
         {this.state.inputData.map((i, index) => <p key={index}>{i}</p> )}
       </div>
     )
