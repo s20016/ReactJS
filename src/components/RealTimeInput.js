@@ -32,7 +32,7 @@ export default class RealTimeInput extends React.Component {
     return (
       <div className='P3'>
         <h1>{this.state.title}</h1>
-        <div className='inputBox'>
+        <div className='P3-InputBox'>
           <input type='text' placeholder='Enter something...' className='P3-Input' value={this.state.userInput} onChange={this.handleInput} />
           <button type='button' onClick={this.handleSave} >Save</button>
         </div>

@@ -41,14 +41,14 @@ export default class BMI extends React.Component {
         <h1>{this.state.title}</h1>
         <form className='inputBox' onSubmit={this.handleSubmit}>
           <div className='Set'>
-            <p>Height (cm):</p>
+            <p className='P2-P'>Height (cm):</p>
             <input className='P2-Input' type='number' value={this.state.userHeight} onChange={this.handleHeight}/><br></br>
           </div>
           <div className='Set'>
-            <p>Weight (kg):</p>
+            <p className='P2-P'>Weight (kg):</p>
             <input className='P2-Input' type='number' value={this.state.userWeight} onChange={this.handleWeight}/><br></br>
           </div>
-          <button type='button' onClick={this.handleSubmit}>Calculate BMI</button>
+          <button type='button' onClick={this.handleSubmit}>Calculate</button>
         </form>
         <p className='BMIResult'>BMI: {this.state.userBMI}</p>
       </div>

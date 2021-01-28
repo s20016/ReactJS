@@ -44,12 +44,14 @@
   border-radius: 30px;
 }
 
-.P2 p {
+.P2-P {
   line-height: 2px;
   color: #ffffff;
   margin: 15px 2px;
 }
 
-.P2 .BMIResult {
+.BMIResult {
+  color: #ffffff;
   font-size: 30px;
+  margin: 0 10px;
 }
