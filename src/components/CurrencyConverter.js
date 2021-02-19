@@ -1,11 +1,13 @@
 import React from "react"
-import "./css/CurrencyConverter.css"
+import "../css/main.css"
+
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Input from '@material-ui/core/Input';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 export default class CurrencyConverter extends React.Component {
-
   constructor(props) {
     super(props)
-
     this.state = {
       jpyVal: '0',
       usdVal: '0',
@@ -21,11 +23,7 @@ export default class CurrencyConverter extends React.Component {
 
   async componentDidMount() {
     const url = 'https://s20016.github.io/ReactJS/data/rates.json'
-    // const url = 'https://raw.githubusercontent.com/s20016/ReactJS/master/public/data/rates.json'
-    // const url = 'http://localhost:3000/ReactJS/data/rates.json'
-    // const url = './ReactJS/data/rates.json'
     await window.fetch(url).then(res => res.json()).then(json => this.setState({ data: json}))
-    // console.log(this.state.data)
   }
 
   // JPY
@@ -64,20 +62,32 @@ export default class CurrencyConverter extends React.Component {
   render() {
     return (
       <div className='P1'>
-        <h1>{this.state.data.title}</h1>
-        <div className='inputBox'>
-          <div className='Set'>
-            <p className='currency'>JPY</p>
-            <input type='text' className='P1-Input' value={this.state.jpyVal} onChange={this.handleJPY}/>
-          </div>
-          <div className='Set'>
-            <p className='currency'>USD</p>
-            <input type='text' className='P1-Input' value={this.state.usdVal} onChange={this.handleUSD}/>
-          </div>
-          <div className='Set'>
-            <p className='currency'>PHP</p>
-            <input type='text' className='P1-Input' value={this.state.phpVal} onChange={this.handlePHP}/>
-          </div> 
+        <div className="P1-MainTitle">
+          <h1 className="P1-Header">converter</h1>
+          <MonetizationOnIcon fontSize="large"/>
+        </div>
+        <div className='P1-InputBox'>
+          <Input
+            fullWidth
+            variant="filled"
+            value={this.state.usdVal}
+            onChange={this.handleUSD}
+            startAdornment={<InputAdornment position="start">&#36;</InputAdornment>}
+          />
+          <Input
+            fullWidth
+            variant="filled"
+            value={this.state.jpyVal}
+            onChange={this.handleJPY}
+            startAdornment={<InputAdornment position="start">&#165;</InputAdornment>}
+          />
+          <Input
+            fullWidth
+            variant="filled"
+            value={this.state.phpVal}
+            onChange={this.handlePHP}
+            startAdornment={<InputAdornment position="start">&#8369;</InputAdornment>}
+          />
         </div>
       </div>
     )

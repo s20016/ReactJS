@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$bg-color: #1E1E1E;
+$bg-main: #282C34;
+$footer-color: #1a1919;
+$header1: #ffffff;
+$header2: #61DAFB;
+$prjct-bg: #E9EBEC;
+
+body {
+  background-color: $bg-color;
+  font-family: 'Montserrat', sans-serif;
+}
+
+// Header
+.header {
+  text-align: center;
+
+  .h1 {
+    color: $header1;
+    font-size: 1rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0.8rem auto;
+    justify-content: center;
+    position: absolute;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+
+  .h2 {
+    color: $header2;
+    font-size: 4.5rem;
+    padding: 1rem;
+    margin: 0;
+    background-color: $bg-main;
+  }
+}
+
+// Project Container
+.ReactProjects {
+  color: $header1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 45rem;
+  margin: 0 auto !important;
+  padding: 1rem;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+// Footer
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: $bg-main;
+
+  .logo {
+    color: $header1;
+  }
+}
+
+// P1 Money Converter
+.P1 {
+  margin: 1rem;
+  padding: 0.8rem;
+  background-color: $prjct-bg;
+  height: auto;
+  border-radius: 1rem;
+  color: $bg-color;
+
+  .P1-MainTitle {
+    display: flex;
+    justify-content: space-between;
+
+    .P1-Header {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 auto 0.8rem;
+      text-transform: capitalize;
+      width: 100%;
+    }
+  }
+
+  .P1-InputBox {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// P2 BMI
+.P2 {
+  margin: 1rem;
+  padding: 0.8rem;
+  background-color: $prjct-bg;
+  height: auto;
+  border-radius: 1rem;
+  color: $bg-color;
+
+  .P2-MainTitle {
+    display: flex;
+    justify-content: space-between;
+
+    .P2-Header {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 auto 0.8rem;
+      text-transform: capitalize;
+      width: 100%;
+    }
+  }
+
+  .P2-Button {
+    display: flex;
+    justify-content: center;
+    // font-weight: 600;
+    margin: 0.7rem auto;
+    // background-color: #282C34;
+  }
+}
+
+// P3 Real Time Input
+.P3 {
+  margin: 1rem;
+  padding: 0.8rem;
+  background-color: $prjct-bg;
+  height: auto;
+  border-radius: 1rem;
+  color: $bg-color;
+
+  .P3-MainTitle {
+    display: flex;
+    justify-content: space-between;
+
+    .P3-Header {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 auto 0.8rem;
+      text-transform: capitalize;
+      width: 100%;
+    }
+  }
+
+
+  .P3-InputBox {
+    display: flex;
+    margin: 1rem 0;
+
+    .P3-Input {
+      flex-basis: 95%;
+      outline: none;
+      flex-grow: 1;
+
+      & [type='text'] {
+        font-size: 1.3rem;
+        padding: 0.5rem 0.7rem;
+      }
+    }
+
+    .P3-Button {
+      background-color: $header2;
+      border-radius: 0;
+      padding: 0 2rem;
+    }
+  }
+
+  .P3-Output {
+    font-size: 3rem;
+    margin: 0.8rem 0;
+    overflow-wrap: break-word;
+    max-width: 10ch;
+  }
+
+  .P3-History {
+    line-height: 0.2rem;
+  }
+}

@@ -26,3 +26,12 @@ yarn-error.log*
 package-lock.json
 package.json
 yarn.lock
+
+# public
+/public/manifest.json
+
+# src
+/src/App.test.js
+/src/setupTests.js
+/src/reportWebVitals.js
+

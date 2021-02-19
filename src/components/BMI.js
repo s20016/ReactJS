@@ -1,5 +1,10 @@
 import React from 'react'
-import './css/BMI.css'
+import '../css/main.css'
+
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
+import Button from '@material-ui/core/Button';
 
 export default class BMI extends React.Component {
   constructor(props) {
@@ -29,28 +34,51 @@ export default class BMI extends React.Component {
 
   handleSubmit = (event) => {
     // BMI = kg/m2
+    const w = this.state.userWeight
+    const h = this.state.userHeight
+    const BMICal =  w / (( h/ 100) ^ 2)
+    const usrBMI = 
+      (BMICal <= 18.5) ? "Underweight"
+      : (18.5 < BMICal && BMICal <= 24.9) ? "Normal"
+      : (24.9 < BMICal && BMICal <= 29.9) ? "Overweight"
+      : "Obesity"
     this.setState({
-      userBMI: this.state.userWeight / ((this.state.userHeight / 100) ^ 2),
+      userBMI: usrBMI
     })
-    console.log(this.state.userBMI)
   }
 
   render() {
     return (
       <div className='P2'>
-        <h1>{this.state.title}</h1>
-        <form className='inputBox' onSubmit={this.handleSubmit}>
-          <div className='Set'>
-            <p className='P2-P'>Height (cm):</p>
-            <input className='P2-Input' type='number' value={this.state.userHeight} onChange={this.handleHeight}/><br></br>
-          </div>
-          <div className='Set'>
-            <p className='P2-P'>Weight (kg):</p>
-            <input className='P2-Input' type='number' value={this.state.userWeight} onChange={this.handleWeight}/><br></br>
-          </div>
-          <button type='button' onClick={this.handleSubmit}>Calculate</button>
-        </form>
-        <p className='BMIResult'>BMI: {this.state.userBMI}</p>
+        <div className="P2-MainTitle">
+        <h1 className="P2-Header">BMI calculator</h1>
+          <AccessibilityNewIcon fontSize="large"/>
+        </div>
+        <FormControl
+          fullWidth
+          className="P2-InputBox"
+          onSubmit={this.handleSubmit}>
+          <TextField
+            label="Enter your height: cm"
+            className="Set"
+            value={this.state.userHeight}
+            onChange={this.handleHeight}
+            />
+          <TextField
+            label="Enter your weight: kg"
+            className="Set"
+            value={this.state.userWeight}
+            onChange={this.handleWeight}
+          />
+        </FormControl>
+        <Button
+          className="P2-Button"
+          variant="contained"
+          color="primary"
+          onClick={this.handleSubmit}>
+          Calculate
+        </Button>
+        <h3 className='BMIResult'>BMI: {this.state.userBMI}</h3>
       </div>
     )
   }
