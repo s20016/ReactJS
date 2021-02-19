@@ -25,11 +25,11 @@ body {
 }
 
 .header .h2 {
-  color: #61DAFB;
+  color: #10b3e0;
   font-size: 4.5rem;
   padding: 1rem;
   margin: 0;
-  background-color: #282C34;
+  background-color: #161717;
 }
 
 .ReactProjects {
@@ -46,7 +46,7 @@ body {
           align-items: center;
   max-width: 45rem;
   margin: 0 auto !important;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .ReactProjects > * {
@@ -57,7 +57,7 @@ body {
   text-align: center;
   margin-top: 2rem;
   padding: 1rem;
-  background-color: #282C34;
+  background-color: #161717;
 }
 
 .footer .logo {
@@ -185,7 +185,7 @@ body {
 }
 
 .P3 .P3-InputBox .P3-Button {
-  background-color: #61DAFB;
+  background-color: #10b3e0;
   border-radius: 0;
   padding: 0 2rem;
 }

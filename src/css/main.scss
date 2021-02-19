@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 $bg-color: #1E1E1E;
-$bg-main: #282C34;
-$footer-color: #1a1919;
+$bg-main: #161717;
+$footer-color: #292727;
 $header1: #ffffff;
-$header2: #61DAFB;
+$header2: #10b3e0;
 $prjct-bg: #E9EBEC;
 
 body {
@@ -47,7 +47,7 @@ body {
   align-items: center;
   max-width: 45rem;
   margin: 0 auto !important;
-  padding: 1rem;
+  padding: 2rem;
 
   & > * {
     width: 100%;
